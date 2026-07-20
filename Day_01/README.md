@@ -320,6 +320,8 @@ of natural images (e.g. a cat). Key differences:
   divergence (e.g. KL) whose gradient is expressed through the **teacher's score function**
   $\nabla_x \log p_\text{teacher}$ (no need for teacher trajectories/samples directly).
 
+### Transformers, Scaling, and Hardware — Jacob Austin (Anthropic)
+
 <!-- Notes go here -->
 
 

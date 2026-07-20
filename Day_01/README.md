@@ -330,6 +330,10 @@ of natural images (e.g. a cat). Key differences:
   1. **Counterfactual** — reasoning about "what would happen if…" (alternative interventions).
   2. **Credit assignment** — attributing outcomes to the right causes/actions/steps.
   3. **Generalization** — behaving well beyond the training distribution.
+- **Company's thesis:** they believe these three are **emergent capabilities** that large models
+  could develop / acquire — i.e. **LPMs** (Large Physics Models), analogous to how LLMs develop
+  emergent abilities, could exhibit counterfactual reasoning, credit assignment, and
+  generalization.
 
 <!-- Notes go here -->
 

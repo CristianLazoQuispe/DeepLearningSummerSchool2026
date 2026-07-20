@@ -354,6 +354,30 @@ flowchart LR
 - Three operations = the three sub-problems: **inverse problem** (obs→latent), **dynamics /
   steering** (latent→future latent), **explaining / decoding** (latent→obs).
 
+#### Autoregressive as the solution
+
+- **Autoregressive** is the solution, but it's **complicated**.
+- **One-shot prediction at the first stage** (predict in a single shot early on, rather than
+  rolling out step by step from the start).
+
+#### Vision — Large Physics Models (LPM) for weather
+
+- **Recover underlying physical states** from **raw noisy inputs**.
+- **Learn causal structure** to **predict and control** the future.
+
+Pipeline:
+
+```mermaid
+flowchart LR
+  data["Data"] --> fusion["Sensor fusion"] --> oneshot["One-shot model"]
+  oneshot --> decode["State decoding"] --> pred["Physical state predictions"]
+  oneshot --> reason["Reasoning"] --> act["Explainable actions"]
+```
+
+- `Data → sensor fusion → one-shot model`, which branches into:
+  - `→ state decoding → physical state predictions`, and
+  - `→ reasoning → explainable actions`.
+
 <!-- Notes go here -->
 
 

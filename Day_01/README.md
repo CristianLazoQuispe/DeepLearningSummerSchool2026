@@ -47,18 +47,18 @@ of natural images (e.g. a cat). Key differences:
 
 #### Problem definition — generative approach for design
 
-- **Objective:** `max_{x ∈ F}  R(x; c)`
+- **Objective:** $\max_{x \in F} R(x; c)$
   - `x` — a candidate design; `F` — the feasible set (e.g. valid molecules / designable proteins).
   - `R(x; c)` — reward function, conditioned on `c`.
-- **Generative approach:** train `p(x)` on a set of **valid molecules or designable proteins**.
-  - Feasibility ↔ likelihood: `x ∈ F  ⟺  x ~ p_θ(x)` (staying in the data manifold = being feasible).
+- **Generative approach:** train $p(x)$ on a set of **valid molecules or designable proteins**.
+  - Feasibility ↔ likelihood: $x \in F \iff x \sim p_\theta(x)$ (staying in the data manifold = being feasible).
 - Reformulate the constrained max as sampling from an optimal distribution:
-  `max_{x ∈ F} R(x; c)  →  q*(x) ∝ p_θ(x) · exp( R(x; c) / λ )`
-  - Reward-tilted distribution: reweight the generative prior `p_θ(x)` by the exponentiated
-    reward. `λ` is a temperature — small `λ` → sharper toward high reward; large `λ` → stays
-    closer to the prior `p_θ`. _(reconstructed; confirm exact form against the slide)_
+  $$\max_{x \in F} R(x; c) \;\longrightarrow\; q^*(x) \propto p_\theta(x)\,\exp\!\big(R(x; c)/\lambda\big)$$
+  - Reward-tilted distribution: reweight the generative prior $p_\theta(x)$ by the exponentiated
+    reward. $\lambda$ is a temperature — small $\lambda$ → sharper toward high reward; large
+    $\lambda$ → stays closer to the prior $p_\theta$. _(reconstructed; confirm exact form against the slide)_
 - **Three paradigms** to approach it:
-  1. **Generative training** — learn `p_θ(x)` from valid data.
+  1. **Generative training** — learn $p_\theta(x)$ from valid data.
   2. **Post-training alignment w/ RL** — fine-tune with reinforcement learning toward the reward.
   3. **Test-time search** — search/guide at inference time (no weight updates).
 - **Representation of molecules / fragments** (string-based):
@@ -167,9 +167,9 @@ of natural images (e.g. a cat). Key differences:
 #### Section 1 — General diffusion and flow models
 
 - Basically the theory of **flow matching**:
-  - **Interpolation** — define a path `x_t` between data `x_1` (or `x_0`) and noise, e.g. a
-    linear interpolation `x_t = (1 - t) x_0 + t x_1`.
-  - **Velocity field** — the model learns a velocity (vector) field `v_θ(x_t, t)` that tells
+  - **Interpolation** — define a path $x_t$ between data $x_1$ (or $x_0$) and noise, e.g. a
+    linear interpolation $x_t = (1 - t)\,x_0 + t\,x_1$.
+  - **Velocity field** — the model learns a velocity (vector) field $v_\theta(x_t, t)$ that tells
     each point which direction/speed to move along the path.
   - Generation = integrate an ODE following that velocity field to flow noise → data.
 - **Example — generation time for video diffusion models** (motivates "acceleration"):
@@ -201,15 +201,15 @@ of natural images (e.g. a cat). Key differences:
   - **Time-discretization:** adaptive or **learned** (instead of fixed uniform steps).
 - **Trajectory design** — shape the generative path to make it easier/faster to integrate:
   - Depends on the **data/prior distribution**, the **coupling** (how noise is paired with
-    data), and the **interpolant** (the chosen path `x_t`).
+    data), and the **interpolant** (the chosen path $x_t$).
   - **Ingredients influencing ODE trajectories:**
     - **Data/prior distribution:** use a latent space with better **"diffusibility"** — e.g.
       **replace the VAE by a representation encoder** (a latent that's easier/straighter to
       diffuse through). _(said "BAE" → likely VAE)_
-    - **Coupling** — how to pair `(x0, xt)` (noise ↔ data):
+    - **Coupling** — how to pair $(x_0, x_t)$ (noise ↔ data):
       - **mini-batch optimal transport** (OT re-pairing within a batch),
       - use a **pre-trained flow (reflow / rectified flow)**, or
-      - **learn `p(xt | x0)`**.
+      - **learn** $p(x_t \mid x_0)$.
     - **Interpolant** — make it **learnable** (depends on `x0, xt`) with a **straightness
       objective** (paths as straight as possible → fewer ODE steps).
 
@@ -268,10 +268,10 @@ of natural images (e.g. a cat). Key differences:
 
 - Goal: **match the teacher's trajectory or distribution in fewer steps** (distill a slow
   many-step teacher into a fast few-step student).
-- **Parametrization:** `f_{s,t}(x_s) = x_s + (t − s) · v_{s,t}(x_s)`,
-  where `v_{s,t}` is **initialized with the teacher**.
+- **Parametrization:** $f_{s,t}(x_s) = x_s + (t - s)\,v_{s,t}(x_s)$,
+  where $v_{s,t}$ is **initialized with the teacher**.
   - Inspired by **mean velocity**; more general parametrizations are possible.
-  - **Boundary condition** `f_{t,t}(x_t) = x_t` is important for several methods.
+  - **Boundary condition** $f_{t,t}(x_t) = x_t$ is important for several methods.
 
 #### Section 2 — Deep-dive into step-distillation
 
@@ -291,8 +291,8 @@ of natural images (e.g. a cat). Key differences:
 - Enforce **consistent predictions along the trajectory** — all points on a path should map to
   the same target (self-consistency), instead of learning big jumps from smaller ones.
 - Objective involves the **derivative of the flow map** along the path:
-  `‖ d/ds  f_{s,t}(x_s) ‖`  → penalize how much the prediction changes as `s` moves
-  (Eulerian / differential view). Consistency ⇒ this stays ~0 along the trajectory.
+  $\left\lVert \dfrac{d}{ds} f_{s,t}(x_s) \right\rVert$ → penalize how much the prediction changes
+  as $s$ moves (Eulerian / differential view). Consistency ⇒ this stays $\approx 0$ along the trajectory.
 
 <!-- Notes go here -->
 

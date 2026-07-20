@@ -251,6 +251,19 @@ of natural images (e.g. a cat). Key differences:
 - **Left — Independent coupling:** routes cross ⇒ curved field ⇒ many ODE steps (slow).
 - **Right — Reflow / OT coupling:** re-paired, no crossing ⇒ straight ⇒ few (~1) steps (fast).
 
+> **Clarification — crossing is NOT a wrong result, it's a *speed* problem.**
+> The arrows are the **training coupling** (which noise is arbitrarily paired with which data
+> during training), not "where a point ends up at inference".
+> - **Both** couplings learn the **correct** distribution — with enough steps, each generates
+>   valid cats and dogs. Crossing does **not** send samples to the wrong domain.
+> - The model learns a **single** velocity `v(x,t)` per point/time. Where two training
+>   trajectories cross, it must average conflicting directions ⇒ the marginal field becomes
+>   **curved**. A curved field needs **many small ODE steps** to integrate accurately; too few
+>   steps ⇒ integration error ⇒ worse samples.
+> - Reflow/OT straightens the field ⇒ **same quality with far fewer steps**.
+> - So your intuition is right: the real issue is the **number of steps** to reach the solution.
+>   Crossing → curved → many steps (slow); straight → few steps (fast).
+
 #### Step-distillation paradigms
 
 - Goal: **match the teacher's trajectory or distribution in fewer steps** (distill a slow

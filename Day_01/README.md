@@ -326,6 +326,11 @@ of natural images (e.g. a cat). Key differences:
 
 ### Large Physics Models — Dar Mehta (Casual Labs)
 
+- The talk centers on **3 things**:
+  1. **Counterfactual** — reasoning about "what would happen if…" (alternative interventions).
+  2. **Credit assignment** — attributing outcomes to the right causes/actions/steps.
+  3. **Generalization** — behaving well beyond the training distribution.
+
 <!-- Notes go here -->
 
 

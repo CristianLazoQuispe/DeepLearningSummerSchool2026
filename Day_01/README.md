@@ -335,6 +335,25 @@ of natural images (e.g. a cat). Key differences:
   emergent abilities, could exhibit counterfactual reasoning, credit assignment, and
   generalization.
 
+#### Problem formulation
+
+Pipeline (observations → latent → dynamics → back to observations):
+
+1. **Partial observations** $Y_t$ → *solving inverse problems* →
+2. **Latent state** $Z_t$ → *solving dynamics / steering* →
+3. **Latent state** $Z_{t+n}$ → *explaining observations* →
+4. **Partial observations** $Y_{t+n}$
+
+```mermaid
+flowchart LR
+  Yt["Partial obs. Yₜ"] -->|solving inverse problems| Zt["Latent state Zₜ"]
+  Zt -->|solving dynamics / steering| Ztn["Latent state Zₜ₊ₙ"]
+  Ztn -->|explaining observations| Ytn["Partial obs. Yₜ₊ₙ"]
+```
+
+- Three operations = the three sub-problems: **inverse problem** (obs→latent), **dynamics /
+  steering** (latent→future latent), **explaining / decoding** (latent→obs).
+
 <!-- Notes go here -->
 
 

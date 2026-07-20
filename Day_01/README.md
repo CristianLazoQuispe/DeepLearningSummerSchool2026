@@ -294,6 +294,16 @@ of natural images (e.g. a cat). Key differences:
   $\left\lVert \dfrac{d}{ds} f_{s,t}(x_s) \right\rVert$ → penalize how much the prediction changes
   as $s$ moves (Eulerian / differential view). Consistency ⇒ this stays $\approx 0$ along the trajectory.
 
+##### Lagrangian flow maps
+
+- **Predictions follow the flow** (Lagrangian view: track the particle along the trajectory,
+  vs. Eulerian which differentiates w.r.t. the source time $s$).
+- **Idea:** take the derivative **w.r.t. $t$** (instead of $s$) on both sides of
+  $f_{s,t}(x_s) = x_t$ to obtain
+  $$\frac{d}{dt}\, f_{s,t}(x_s) = v_t(x_t)$$
+  i.e. moving the target time $t$ makes the map's output move with the velocity field $v_t$
+  evaluated at the endpoint $x_t$.
+
 <!-- Notes go here -->
 
 

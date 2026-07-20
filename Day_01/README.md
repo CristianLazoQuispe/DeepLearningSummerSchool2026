@@ -304,7 +304,19 @@ of natural images (e.g. a cat). Key differences:
   i.e. moving the target time $t$ makes the map's output move with the velocity field $v_t$
   evaluated at the endpoint $x_t$.
 
+##### Parallel decoding distillation (Pi-Flow / π-Flow)
+
+<!-- TODO: details from the slide -->
+
+##### Adversarial distillation
+
+- **Projected GANs on teacher features**, with **diffusion initialization**.
+  - Use a GAN (adversarial) loss computed on **features from the teacher** (projected), and
+    **initialize** the student from the (pretrained) **diffusion** model.
+
 <!-- Notes go here -->
+
+
 
 
 

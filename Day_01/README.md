@@ -273,6 +273,8 @@ of natural images (e.g. a cat). Key differences:
   - Inspired by **mean velocity**; more general parametrizations are possible.
   - **Boundary condition** `f_{t,t}(x_t) = x_t` is important for several methods.
 
+#### Section 2 — Deep-dive into step-distillation
+
 <!-- Notes go here -->
 
 

@@ -244,39 +244,21 @@ of natural images (e.g. a cat). Key differences:
 - Takeaway: it's **one** noise distribution flowing into a **multi-modal** data distribution
   (cats + dogs); the diagram contrasts good vs bad **routing** of noise into those modes.
 
-**Diagrams (mermaid):**
+**Diagram** (TikZ → SVG, source: [`figs/coupling.tex`](figs/coupling.tex)):
 
-_Independent (random) coupling → paths cross → curved field → many ODE steps:_
+![Independent coupling (crossing, curved) vs Reflow/OT coupling (straight)](figs/coupling.svg)
 
-```mermaid
-flowchart LR
-  subgraph X0["x0 · noise (1 Gaussian)"]
-    n1["noise A"]
-    n2["noise B"]
-  end
-  subgraph XT["xt · data (multi-modal)"]
-    catz["cats mode"]
-    dogz["dogs mode"]
-  end
-  n1 -->|crosses| dogz
-  n2 -->|crosses| catz
-```
+- **Left — Independent coupling:** routes cross ⇒ curved field ⇒ many ODE steps (slow).
+- **Right — Reflow / OT coupling:** re-paired, no crossing ⇒ straight ⇒ few (~1) steps (fast).
 
-_Reflow / OT coupling → re-paired, no crossing → straight paths → few (even ~1) steps:_
+#### Step-distillation paradigms
 
-```mermaid
-flowchart LR
-  subgraph X0b["x0 · noise (1 Gaussian)"]
-    m1["noise A"]
-    m2["noise B"]
-  end
-  subgraph XTb["xt · data (multi-modal)"]
-    cats2["cats mode"]
-    dogs2["dogs mode"]
-  end
-  m1 -->|straight| cats2
-  m2 -->|straight| dogs2
-```
+- Goal: **match the teacher's trajectory or distribution in fewer steps** (distill a slow
+  many-step teacher into a fast few-step student).
+- **Parametrization:** `f_{s,t}(x_s) = x_s + (t − s) · v_{s,t}(x_s)`,
+  where `v_{s,t}` is **initialized with the teacher**.
+  - Inspired by **mean velocity**; more general parametrizations are possible.
+  - **Boundary condition** `f_{t,t}(x_t) = x_t` is important for several methods.
 
 <!-- Notes go here -->
 

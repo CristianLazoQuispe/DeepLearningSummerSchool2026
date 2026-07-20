@@ -314,7 +314,14 @@ of natural images (e.g. a cat). Key differences:
   - Use a GAN (adversarial) loss computed on **features from the teacher** (projected), and
     **initialize** the student from the (pretrained) **diffusion** model.
 
+##### Variational score distillation (VSD)
+
+- **Compute a divergence using the teacher score** — match the student to the teacher by a
+  divergence (e.g. KL) whose gradient is expressed through the **teacher's score function**
+  $\nabla_x \log p_\text{teacher}$ (no need for teacher trajectories/samples directly).
+
 <!-- Notes go here -->
+
 
 
 

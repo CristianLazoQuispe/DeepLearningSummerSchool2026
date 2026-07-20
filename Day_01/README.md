@@ -322,6 +322,10 @@ of natural images (e.g. a cat). Key differences:
 
 ### Transformers, Scaling, and Hardware — Jacob Austin (Anthropic)
 
+- _Hard to follow live (hardware-heavy). **TODO:** revisit slides/recording and fill in._
+
+### Large Physics Models — Dar Mehta (Casual Labs)
+
 <!-- Notes go here -->
 
 

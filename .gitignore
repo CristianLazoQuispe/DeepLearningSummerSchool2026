@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Jupyter
+*.nbconvert.ipynb
+
+# Environments / secrets
+.env
+.env.*
+
+# Large / generated artifacts
+*.ckpt
+*.pt
+*.pth
+*.log
+data/
+outputs/
+wandb/

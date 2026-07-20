@@ -24,6 +24,9 @@ env/
 .env
 .env.*
 
+# Personal ideas / brainstorms (never pushed)
+ideas/
+
 # Large / generated artifacts
 *.ckpt
 *.pt

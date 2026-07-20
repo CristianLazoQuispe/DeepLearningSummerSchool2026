@@ -275,6 +275,17 @@ of natural images (e.g. a cat). Key differences:
 
 #### Section 2 — Deep-dive into step-distillation
 
+##### Progressive distillation
+
+- Idea: **learn large jumps from smaller ones** (a student learns to take 1 big step that
+  matches 2 teacher steps; repeat → halve the step count each round).
+- **Pros:** ~3 forward passes but **no full trajectory required**.
+- **Cons:**
+  1. **compounding errors**,
+  2. (if using a **frozen map**) **multiple iterations** needed,
+  3. (otherwise) **moving target** in the loss + an **additional loss for `t = s`**
+     (match the identity / boundary condition).
+
 <!-- Notes go here -->
 
 

@@ -286,6 +286,14 @@ of natural images (e.g. a cat). Key differences:
   3. (otherwise) **moving target** in the loss + an **additional loss for `t = s`**
      (match the identity / boundary condition).
 
+##### Consistency models & Eulerian flow maps
+
+- Enforce **consistent predictions along the trajectory** — all points on a path should map to
+  the same target (self-consistency), instead of learning big jumps from smaller ones.
+- Objective involves the **derivative of the flow map** along the path:
+  `‖ d/ds  f_{s,t}(x_s) ‖`  → penalize how much the prediction changes as `s` moves
+  (Eulerian / differential view). Consistency ⇒ this stays ~0 along the trajectory.
+
 <!-- Notes go here -->
 
 

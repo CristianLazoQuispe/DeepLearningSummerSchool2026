@@ -40,6 +40,18 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
   - **Out-of-distribution constraints** — the requested porosity constraints on the generated
     materials can fall **outside** the training distribution.
 
+#### Experimental results — physics-informed motion
+
+- Generate **video frames that adhere to physical principles**.
+- **Interesting:** applied **at inference time** (constraints enforced during sampling, not
+  retraining).
+- Discretized kinematics used (notation approximate from slide):
+  $$p_t = p_{t-1} + \left(v_t + \tfrac{1}{2}\,\frac{dv_t}{dt}\right), \qquad
+    v_{t+1} = \frac{dp_t}{dt} + \frac{dv_t}{dt}$$
+- **Challenges:**
+  - **Satisfying ODEs** (make the trajectory obey the governing equations).
+  - **Generalize to out-of-distribution constraints.**
+
 <!-- Notes go here -->
 
 ## Key takeaways

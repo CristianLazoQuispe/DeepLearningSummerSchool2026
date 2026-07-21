@@ -101,6 +101,12 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
   step updates **local tokens**, yet constraints are often **global** (over the whole sample) —
   the challenge is making global constraints guide the per-token discrete updates.
 
+##### Application — synthetic chemistry: molecular generation
+
+- **Small vocabulary** (~**80 tokens**) → **easy to train** and gets **good results**.
+- **But:** the **search for valid molecules is still hard** — even with a tiny vocab and good
+  training, ensuring the generated molecules satisfy validity constraints remains the bottleneck.
+
 <!-- Notes go here -->
 
 

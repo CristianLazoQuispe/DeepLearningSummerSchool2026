@@ -51,6 +51,11 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
 - **Challenges:**
   - **Satisfying ODEs** (make the trajectory obey the governing equations).
   - **Generalize to out-of-distribution constraints.**
+- **Key insight:** what was previously **out-of-distribution** in terms of *data similarity*
+  becomes **in-distribution** at the level of the … _(physics / constraints / governing laws?
+  TODO — finish from slide)_.
+  - Intuition: raw samples may look OOD in pixel/data space, but once you measure them by whether
+    they **satisfy the physics**, they lie inside the feasible/physical distribution.
 
 <!-- Notes go here -->
 

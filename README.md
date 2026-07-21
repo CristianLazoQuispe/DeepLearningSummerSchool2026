@@ -19,6 +19,9 @@ emphasis on practical application and best practices for deep learning on HPC sy
 - Multi-modal Models
 - Deep Learning Performance and Scaling
 
+See [References.md](./References.md) for the consolidated list of models, methods, and papers
+mentioned across the lectures.
+
 ## Notes by Day
 
 | Day | Date | Notes |

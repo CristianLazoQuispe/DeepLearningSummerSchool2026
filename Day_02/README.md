@@ -57,6 +57,13 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
   - Intuition: raw samples may look OOD in pixel/data space, but once you measure them by whether
     they **satisfy the physics**, they lie inside the feasible/physical distribution.
 
+#### Augmented Lagrangian sampling
+
+- Use **augmented Lagrangian** sampling when:
+  - the constraint set $C$ is **highly non-convex**, or
+  - **only violation residuals** can be computed (you can measure *how much* a constraint is
+    violated, but not project/solve it exactly).
+
 <!-- Notes go here -->
 
 ## Key takeaways

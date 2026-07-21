@@ -77,6 +77,15 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
 - **Result:** generating **usable structures in 21.0%** of total generations (and **up to 83.0%**
   for **well-posed ligands**).
 
+#### Application — inverse design of mechanical metamaterials
+
+- Goal: **target stress–strain responses** (design a material that produces a desired
+  stress–strain curve).
+- **Metamaterials:** materials with specific mechanical properties obtained from **periodic
+  arrangements of small-scale structural building blocks**.
+- **Challenge:** go **from the desired stress–strain curve → to a corresponding small-scale
+  structure** (the inverse design problem).
+
 <!-- Notes go here -->
 
 ## Key takeaways

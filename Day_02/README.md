@@ -6,6 +6,13 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
 
 ### Discrete Diffusion — Ferdinando Fioretto (University of Virginia)
 
+**Talk structure — 3 topics:**
+1. **Foundations** — _How should we think of constrained generation?_
+2. **Applications** — _From convex to black-box constraints and verifiers._
+3. **Discrete diffusion** — _How can global rules steer local token updates?_
+
+#### Topic 1 — Foundations: how should we think of constrained generation?
+
 - Recap of the **diffusion reverse process** — how to **update $x_t$** step by step
   (denoising from $x_t$ toward $x_{t-1}$).
 - **Constraint-based diffusion**
@@ -31,7 +38,9 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
 - **Analogy:** free generation = drawing freely; constrained generation = **drawing inside the
   lines** (the sequential optimization corrects the stroke at each step so it stays in bounds).
 
-#### Application — microstructure material design (constrained porosity)
+#### Topic 2 — Applications: from convex to black-box constraints and verifiers
+
+##### Application — microstructure material design (constrained porosity)
 
 - Task: design material **microstructures** with a **constrained porosity** (target/allowed
   pore fraction).
@@ -40,7 +49,7 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
   - **Out-of-distribution constraints** — the requested porosity constraints on the generated
     materials can fall **outside** the training distribution.
 
-#### Experimental results — physics-informed motion
+##### Experimental results — physics-informed motion
 
 - Generate **video frames that adhere to physical principles**.
 - **Interesting:** applied **at inference time** (constraints enforced during sampling, not
@@ -57,19 +66,19 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
   - Intuition: raw samples may look OOD in pixel/data space, but once you measure them by whether
     they **satisfy the physics**, they lie inside the feasible/physical distribution.
 
-#### Augmented Lagrangian sampling
+##### Augmented Lagrangian sampling (black-box constraints / verifiers)
 
 - Use **augmented Lagrangian** sampling when:
   - the constraint set $C$ is **highly non-convex**, or
   - **only violation residuals** can be computed (you can measure *how much* a constraint is
     violated, but not project/solve it exactly).
 
-#### Application — safe autonomy (multi-robot setting)
+##### Application — safe autonomy (multi-robot setting)
 
 - **Key results:** high success rates in **all scenarios (96–100%)**, while **SOTA models'
   performance drops significantly** as the number of robots grows (SOTA degrades by **> 15%**).
 
-#### Application — protein design
+##### Application — protein design
 
 - Problem with the naive approach: you have to **generate many samples** and then check which
   ones satisfy the **physical / chemical / biological constraints** (low yield of valid designs).
@@ -77,7 +86,7 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
 - **Result:** generating **usable structures in 21.0%** of total generations (and **up to 83.0%**
   for **well-posed ligands**).
 
-#### Application — inverse design of mechanical metamaterials
+##### Application — inverse design of mechanical metamaterials
 
 - Goal: **target stress–strain responses** (design a material that produces a desired
   stress–strain curve).
@@ -86,7 +95,14 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
 - **Challenge:** go **from the desired stress–strain curve → to a corresponding small-scale
   structure** (the inverse design problem).
 
+#### Topic 3 — Discrete diffusion: how can global rules steer local token updates?
+
+- Core question: **how can global rules steer local token updates?** In discrete diffusion each
+  step updates **local tokens**, yet constraints are often **global** (over the whole sample) —
+  the challenge is making global constraints guide the per-token discrete updates.
+
 <!-- Notes go here -->
+
 
 ## Key takeaways
 

@@ -110,6 +110,16 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
 <!-- Notes go here -->
 
 
+### Foundations — Andrew Wilson (NYU)
+
+#### Soft inductive biases: a unifying intuition
+
+- **Soft inductive biases** as a unifying idea: instead of **hard constraints** that forbid
+  certain solutions, prefer models with **flexible hypothesis spaces** that *express a preference*
+  (a bias) toward simpler / more plausible solutions, without ruling others out.
+
+<!-- Notes go here -->
+
 ## Key takeaways
 
 <!-- Summarize the main points -->

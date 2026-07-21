@@ -384,6 +384,8 @@ flowchart LR
 - **Ways to build AI foundation models:**
   - **Autoregressive** (predict next token/element in sequence).
   - **Bidirectional** (attend to full context, e.g. masked / BERT-style).
+- Introducing **Zatorm-1** _(name to verify against slide)_ — an **atomic AI foundation
+  architecture**.
 
 <!-- Notes go here -->
 

@@ -69,6 +69,14 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
 - **Key results:** high success rates in **all scenarios (96–100%)**, while **SOTA models'
   performance drops significantly** as the number of robots grows (SOTA degrades by **> 15%**).
 
+#### Application — protein design
+
+- Problem with the naive approach: you have to **generate many samples** and then check which
+  ones satisfy the **physical / chemical / biological constraints** (low yield of valid designs).
+- Baseline: **RFdiffusion** → they propose **CADM** (constraint-aware diffusion model).
+- **Result:** generating **usable structures in 21.0%** of total generations (and **up to 83.0%**
+  for **well-posed ligands**).
+
 <!-- Notes go here -->
 
 ## Key takeaways

@@ -31,6 +31,15 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
 - **Analogy:** free generation = drawing freely; constrained generation = **drawing inside the
   lines** (the sequential optimization corrects the stroke at each step so it stays in bounds).
 
+#### Application — microstructure material design (constrained porosity)
+
+- Task: design material **microstructures** with a **constrained porosity** (target/allowed
+  pore fraction).
+- **Challenges:**
+  - **Data sparsity** — few training samples.
+  - **Out-of-distribution constraints** — the requested porosity constraints on the generated
+    materials can fall **outside** the training distribution.
+
 <!-- Notes go here -->
 
 ## Key takeaways

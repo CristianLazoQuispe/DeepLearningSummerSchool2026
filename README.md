@@ -24,7 +24,7 @@ emphasis on practical application and best practices for deep learning on HPC sy
 | Day | Date | Notes |
 |-----|------|-------|
 | Day 1 | Jul 20 | [Day_01](./Day_01/) |
-| Day 2 | Jul 21 | _coming soon_ |
+| Day 2 | Jul 21 | [Day_02](./Day_02/) |
 | Day 3 | Jul 22 | _coming soon_ |
 | Day 4 | Jul 23 | _coming soon_ |
 | Day 5 | Jul 24 | _coming soon_ |

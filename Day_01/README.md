@@ -378,7 +378,15 @@ flowchart LR
   - `→ state decoding → physical state predictions`, and
   - `→ reasoning → explainable actions`.
 
+### Atomic AI Foundation Models — Alex Morehead (Berkeley Lab)
+
+- **Atomic AI foundation models can speed up science.**
+- **Ways to build AI foundation models:**
+  - **Autoregressive** (predict next token/element in sequence).
+  - **Bidirectional** (attend to full context, e.g. masked / BERT-style).
+
 <!-- Notes go here -->
+
 
 
 

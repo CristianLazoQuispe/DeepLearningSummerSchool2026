@@ -64,6 +64,11 @@ _Notes from the second day of the DL4SCI 2026 Summer School._
   - **only violation residuals** can be computed (you can measure *how much* a constraint is
     violated, but not project/solve it exactly).
 
+#### Application — safe autonomy (multi-robot setting)
+
+- **Key results:** high success rates in **all scenarios (96–100%)**, while **SOTA models'
+  performance drops significantly** as the number of robots grows (SOTA degrades by **> 15%**).
+
 <!-- Notes go here -->
 
 ## Key takeaways
